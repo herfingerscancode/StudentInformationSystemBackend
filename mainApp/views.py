@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Marks
+
 
 # Create your views here.
 from rest_framework.parsers import JSONParser

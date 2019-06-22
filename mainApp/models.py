@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -56,6 +57,29 @@ class Student(models.Model):
     pass
 
 class Result(models.Model):
+    exam_choices = [
+        ('M1', 'First Midterm Exam'),
+        ('TM', 'Terminal Exam'),
+        ('M2', 'Second Midterm Exam'),
+        ('AN', 'Annual Exam')
+    ]
+    type_of_exam = models.CharField(max_length=2, choices=exam_choices)
+    date_of_exam = models.DateField
+    student = models.ForeignKey(User, on_delete=models.CASCADE)
+    english = models.IntegerField(null=True)
+    maths = models.IntegerField(null=True)
+    kiswahili = models.IntegerField(null=True)
+    biology = models.IntegerField(null=True)
+    physics = models.IntegerField(null=True)
+    chemistry = models.IntegerField(null=True)
+    civics = models.IntegerField(null=True)
+    history = models.IntegerField(null=True)
+    geography = models.IntegerField(null=True)
+    general_studies = models.IntegerField(null=True)
+    basic_applied_mathematics = models.IntegerField(null=True)
+
+    def __str__(self):
+        return Result.student
     """
     This model contains results for each student for each subject and exam
     Fields
@@ -79,3 +103,4 @@ Remember: If a student does not study the subject, it should be left blank
 
 Coder: Nguse And Catherine
     """
+
