@@ -66,17 +66,17 @@ class Result(models.Model):
     type_of_exam = models.CharField(max_length=2, choices=exam_choices)
     date_of_exam = models.DateField
     student = models.ForeignKey(User, on_delete=models.CASCADE)
-    english = models.IntegerField(null=True)
-    maths = models.IntegerField(null=True)
-    kiswahili = models.IntegerField(null=True)
-    biology = models.IntegerField(null=True)
-    physics = models.IntegerField(null=True)
-    chemistry = models.IntegerField(null=True)
-    civics = models.IntegerField(null=True)
-    history = models.IntegerField(null=True)
-    geography = models.IntegerField(null=True)
-    general_studies = models.IntegerField(null=True)
-    basic_applied_mathematics = models.IntegerField(null=True)
+    english = models.IntegerField(null=True, blank=True)
+    maths = models.IntegerField(null=True, blank=True)
+    kiswahili = models.IntegerField(null=True, blank=True)
+    biology = models.IntegerField(null=True, blank=True)
+    physics = models.IntegerField(null=True, blank=True)
+    chemistry = models.IntegerField(null=True, blank=True)
+    civics = models.IntegerField(null=True, blank=True)
+    history = models.IntegerField(null=True, blank=True)
+    geography = models.IntegerField(null=True, blank=True)
+    general_studies = models.IntegerField(null=True, blank=True)
+    basic_applied_mathematics = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.student
