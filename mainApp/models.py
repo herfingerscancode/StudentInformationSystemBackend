@@ -79,7 +79,7 @@ class Result(models.Model):
     basic_applied_mathematics = models.IntegerField(null=True)
 
     def __str__(self):
-        return Result.student
+        return self.student
     """
     This model contains results for each student for each subject and exam
     Fields
